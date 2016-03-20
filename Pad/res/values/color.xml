@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <color name="padBackground">#00ccff</color>
+    <color name="color2">#FF456FFF</color>
+    <color name="btnPadColor">#37B800</color>
+    <color name="btnPadColorClicked">#FF0000</color>
+</resources>

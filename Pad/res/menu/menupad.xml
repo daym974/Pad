@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/stop"
+        android:enabled="true"
+        android:showAsAction="always"
+        android:title="@string/stop"
+        android:visible="true"/>
+    <item
+        android:id="@+id/Editer"
+        android:showAsAction="ifRoom"
+        android:title="@string/editer"/>
+    <item
+        android:id="@+id/apropos"
+        android:showAsAction="ifRoom"
+        android:title="@string/apropos"/>
+
+</menu>

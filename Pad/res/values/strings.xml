@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Pad</string>
+    <string name="enregistrer">Enregistrer</string>
+    <string name="editer">Editer</string>
+    <string name="title_activity_edition">MainActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="stop">Stop</string>
+    <string name="loop">Loop</string>
+    <string name="apropos">A propos</string>
+	<string name="normal">Normal</string>
+	<string name="apropos_txt">Créé par Alexandre Le Guelvouit et Aymeric Dennemont (S4B)</string>
+	<string name="retour">Retour</string>
+</resources>
