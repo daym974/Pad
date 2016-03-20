@@ -24,6 +24,9 @@ public class MainActivity extends Activity {
 	private MediaPlayer[] mp = new MediaPlayer[nb];
 	private boolean edit  = false;
 
+	public final static String EXTRA_MESSAGE ="com.ltm.ltmactionbar.MESSAGE";
+	
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -53,7 +56,7 @@ public class MainActivity extends Activity {
 			public boolean onMenuItemClick(MenuItem item) {
 				if(edit == false){
 					edit = true;
-					Toast.makeText(MainActivity.this, "edit = true", Toast.LENGTH_SHORT).show();
+					Toast.makeText(MainActivity.this, "Choisir bouton", Toast.LENGTH_SHORT).show();
 					for(int x = 0;x<nb;x++){
 						if(mp[x].isPlaying()){
 							mp[x].pause();
@@ -74,9 +77,8 @@ public class MainActivity extends Activity {
 
 		MenuItem stop = menu.getItem(0);
 		stop.setOnMenuItemClickListener(new OnMenuItemClickListener() {
-
-
-
+	
+			
 			@Override
 			public boolean onMenuItemClick(MenuItem item) {
 				Toast.makeText(MainActivity.this, "Et je coupe le son ...", Toast.LENGTH_SHORT).show();	
@@ -107,7 +109,8 @@ public class MainActivity extends Activity {
 		return true;
 	}
 
-
+	
+	
 	private void initPad() {
 		tabB[0] = (Button)findViewById(R.id.Button1);
 		tabB[1] = (Button)findViewById(R.id.Button2);
@@ -156,6 +159,10 @@ public class MainActivity extends Activity {
 
 				@Override
 				public void onClick(View v) {
+					
+					if(edit == false){
+						
+					
 					boolean loop;
 					int selectedId = gr.getCheckedRadioButtonId();
 					RadioButton rb = (RadioButton) findViewById(selectedId);
@@ -167,8 +174,30 @@ public class MainActivity extends Activity {
 						loop = true;
 					}
 					playSound(mediaP,loop);	
+					
+					}else {
+						Intent i1 = new Intent( MainActivity.this, Editer.class );
+					    i1.putExtra(EXTRA_MESSAGE, "ok");
+					    startActivityForResult(i1,0);
+					}
 				}			
 			});
 		}
 	}
+	
+
+	    @Override
+	    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+	      if( resultCode==1 ) {
+	        String s = data.getStringExtra(EXTRA_MESSAGE);
+	        Toast.makeText(this, s, Toast.LENGTH_SHORT).show();
+	       
+	      }
+	      
+	      super.onActivityResult(requestCode, resultCode, data);
+	      edit=false;
+	    }
+
+	
 }

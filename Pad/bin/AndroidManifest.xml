@@ -27,6 +27,12 @@
             android:label="@string/apropos" >
         </activity>
         
+        
+       	<activity
+            android:name=".Editer"
+            android:label="@string/editer" >
+        </activity>
+        
         <activity
             android:name=".EditionActivity"
             android:label="@string/title_activity_edition" >
