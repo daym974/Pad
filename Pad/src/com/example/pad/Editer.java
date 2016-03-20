@@ -13,7 +13,6 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 public class Editer extends Activity{
 
@@ -54,42 +53,17 @@ public class Editer extends Activity{
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
-			String item = (String) parent.getItemAtPosition(position);
-			//Toast.makeText(getApplicationContext(), item, Toast.LENGTH_SHORT).show();
-		    Intent i2 = new Intent();
-	          i2.putExtra(MainActivity.EXTRA_MESSAGE, item);
-	          Editer.this.setResult(1, i2);
-	          Editer.this.finish();
-			
-			
+				String item = (String) parent.getItemAtPosition(position);
+				Intent i2 = new Intent();
+				i2.putExtra(MainActivity.EXTRA_MESSAGE, item);
+				Editer.this.setResult(1, i2);
+				Editer.this.finish();
+
+
 			}
 
 
 		});
-
-
-
-
-		/*
-	      final Intent intent = getIntent();
-	      String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
-	      final TextView tv1 = (TextView)findViewById( R.id.resultat );
-	      tv1.setText( message );
-
-	      Button b_retour =(Button)findViewById(R.id.bouton_retour);
-	      b_retour.setOnClickListener( new OnClickListener() {
-	        @Override
-	        public void onClick(View v) {
-	          Intent i2 = new Intent();
-	          i2.putExtra(MainActivity.EXTRA_MESSAGE, "valeur de retour");
-	          Activity2.this.setResult(1, i2);
-	          Activity2.this.finish();
-	        }
-	      });
-	    }*/
-
-
-
 	}
 
 
